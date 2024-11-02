@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* !========== Global Variable ========== */
+
+:root {
+  --main-font: "Montserrat", sans-serif;
+  --second-font: "Poppins", sans-serif;
+  --main-color: rgb(52, 52, 52);
+  --second-color: rgb(116, 129, 130);
+  --bg-main: #fff;
+  --bg-main-light: #f7f7f7;
+  --bg-main-dark: #1c1c1c;
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.second-color {
+  color: var(--second-color);
+}
+
+.bg-main {
+  background-color: var(--bg-main);
+}
+
+.bg-main-light {
+  background-color: var(--bg-main-light);
+}
+
+.bg-main-dark {
+  background-color: var(--bg-main-dark);
+}
+
+.padding-section {
+  padding: 70px 0;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+/* !========== End Global Variable ========== */
+
+/* ^========== Global CSS ========== */
+
+body {
+  font-family: var(--second-font);
+}
+
+a {
+  color: inherit;
+}
+
+span,
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--main-font);
+}
+
+/* ^========== End Global CSS ========== */
+
+/* &========= Navbar ========= */
+
+.myNav {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .navbar-nav .nav-link {
+  color: #000;
+}
+
+/* &========= End Navbar ========= */
+
+/* ^========= Home ========= */
+
+header {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.623)),
+    url(../images/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header .home-content h5 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+header .home-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+header .home-content .social-icon a {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 30px;
+}
+
+header .home-content h1 .typed {
+  font-weight: 400;
+}
+
+/* ^========= End Home ========= */
+
+/* &========= About ========= */
+
+/* &========= End About ========= */
+
+/* &========= Media Query ========= */
+
+@media only screen and (min-width: 1170px) {
+  .cd-headline {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .headline {
+    font-size: 4.4rem;
+    font-weight: 300;
+  }
+}
+/* &========= End Media Query ========= */
