@@ -349,7 +349,7 @@ header .home-content h1 .typed {
   transition: all 0.5s;
 }
 
-.card-item:hover .icon {
+.card-item:hover .icon::after {
   background-color: var(--bg-main-dark);
   color: #eee;
 }
