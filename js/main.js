@@ -3,6 +3,6 @@ const typed = new Typed("#element", {
   typeSpeed: 25,
   backSpeed: 25,
   loop: true,
-  backDelay: 3500,
+  backDelay: 2500,
   smartBackspace: true,
 });

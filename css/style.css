@@ -40,6 +40,10 @@
 
 /* ^========== Global CSS ========== */
 
+html {
+  scroll-padding: 56px;
+}
+
 body {
   font-family: var(--second-font);
 }
@@ -121,34 +125,51 @@ nav .container {
   padding-left: 0;
 }
 
-.nav-item a {
+a.nav-link {
   position: relative;
 }
 
-.nav-item a::before {
+a.nav-link::after {
   content: "";
   position: absolute;
-  bottom: 8px;
-  width: 0%;
+  bottom: 0;
+  left: 0;
+  width: 0;
   height: 2px;
   background-color: #000;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s;
 }
 
-.nav-item .active::before {
-  width: 70%;
+a.nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-expand-lg a.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.5s;
+}
+
+.navbar-expand-lg a.nav-link.active::before {
+  width: 100%;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  width: fit-content;
+  margin: auto;
 }
 
 .navbar-toggler {
-  border: 0;
-}
-
-.navbar-toggler i {
-  color: white;
+  border: none;
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 0;
+  box-shadow: none;
 }
 
 /* &========= End Navbar ========= */
@@ -660,35 +681,15 @@ footer {
   }
 }
 
-@media screen and (max-width: 992px) {
-  nav .container {
-    padding: 0.5rem 1.25rem;
+/* @media (max-width: 991.98px) {
+  .navbar-nav .nav-link.active::before {
+    content: none;
   }
 
-  nav .navbar-brand {
-    font-size: 1.125rem;
+  .navbar-expand-lg .navbar-nav .nav-link::after {
+    content: none;
   }
-
-  .navbar-nav {
-    background-color: white;
-  }
-
-  .navbar-nav .nav-link {
-    color: black !important;
-  }
-
-  .nav-item a {
-    font-size: 0.8125rem;
-  }
-
-  .nav-item a::before {
-    background-color: black;
-  }
-
-  .nav-item .active::before {
-    width: 9%;
-  }
-}
+} */
 
 @media only screen and (min-width: 768px) {
   .headline {
