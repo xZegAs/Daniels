@@ -5,8 +5,8 @@
 :root {
   --main-font: "Montserrat", sans-serif;
   --second-font: "Poppins", sans-serif;
-  --main-color: rgb(52, 52, 52);
-  --second-color: rgb(116, 129, 130);
+  --main-color: #343434;
+  --second-color: #748182;
   --bg-main: #fff;
   --bg-main-light: #f7f7f7;
   --bg-main-dark: #1c1c1c;
@@ -34,10 +34,6 @@
 
 .padding-section {
   padding: 70px 0;
-}
-
-.mb-30 {
-  margin-bottom: 30px;
 }
 
 /* !========== End Global Variable ========== */
@@ -71,6 +67,27 @@ h6 {
   font-family: var(--main-font);
 }
 
+.heading h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--main-color);
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.heading h3::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: url(../images/dots.png);
+  background-repeat: repeat;
+  z-index: -1;
+}
+
 /* ^========== End Global CSS ========== */
 
 /* &========= Navbar ========= */
@@ -82,6 +99,56 @@ h6 {
 
 nav .navbar-nav .nav-link {
   color: #000;
+}
+
+nav .navbar-nav .nav-item {
+  padding: 0 10px;
+}
+
+.navbar-brand {
+  font-size: 18px;
+  font-family: var(--main-font);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.nav-item a {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+nav .container {
+  padding-left: 0;
+}
+
+.nav-item a {
+  position: relative;
+}
+
+.nav-item a::before {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-item .active::before {
+  width: 70%;
+}
+
+.navbar-toggler {
+  border: 0;
+}
+
+.navbar-toggler i {
+  color: white;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0;
 }
 
 /* &========= End Navbar ========= */
@@ -130,13 +197,496 @@ header .home-content h1 .typed {
 
 /* &========= About ========= */
 
+#about .about-img {
+  position: relative;
+}
+
+#about .about-img::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 0;
+  bottom: -30px;
+  background-image: url(../images/dots.png);
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+#about .about-img img {
+  padding-left: 1.875rem;
+}
+
+#about .about-content h3 {
+  font-weight: 800;
+  color: var(--main-color);
+}
+
+#about .about-content span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--second-color);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+#about .about-content p {
+  font-size: 0.9375rem;
+  color: var(--second-color);
+  line-height: 1.6;
+}
+
+#about .content-about p strong {
+  color: rgb(116, 129, 130);
+}
+
+#about .skills {
+  margin-top: 1.875rem;
+}
+
+.progress {
+  height: 25px;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+  background-color: var(--bg-main-light);
+  margin-bottom: 1.875rem;
+}
+
+.progress-bar {
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #1c1c1c;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.web {
+  width: 95%;
+}
+
+.branding {
+  width: 80%;
+}
+
+.development {
+  width: 90%;
+}
+
+.progress-bar h6 {
+  font-size: 0.8125rem;
+}
+
+#about .button {
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid var(--bg-main-dark);
+  overflow: hidden;
+}
+
+#about .button .dark {
+  color: #fff;
+  padding: 10px 30px;
+  background-color: var(--bg-main-dark);
+  transition: all 0.5s ease-in-out;
+}
+
+#about .button .dark:hover {
+  background-color: #fff;
+  color: var(--bg-main-dark);
+}
+
+#about .button .white {
+  color: var(--bg-main-dark);
+  padding: 10px 30px;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+#about .button .white:hover {
+  background-color: var(--bg-main-dark);
+  color: #fff;
+}
+
 /* &========= End About ========= */
+
+/* ^========= Services ========= */
+
+.card-item {
+  background-color: var(--bg-main);
+  padding: 2.8rem 1.25rem;
+  border-radius: 5px;
+  box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+}
+
+.card-item .icon {
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  line-height: 2.2;
+  transition: all 0.5s;
+}
+
+.card-item .icon:hover {
+  background-color: var(--bg-main-dark);
+  color: #eee;
+}
+
+.card-item h3 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.card-item p {
+  font-size: 14px;
+  color: var(--second-color);
+}
+
+/* ^========= End Services ========= */
+
+/* &========= Portfolio ========= */
+
+#portfolio .layer,
+#team .layer {
+  background-color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  transition: all 0.5s;
+  transform: translateY(10px);
+}
+
+#portfolio .inner:hover .layer,
+#team .card:hover .layer {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#portfolio .layer h6 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transform: translateY(-15px);
+  transition: all 0.5s;
+}
+
+#portfolio .layer:hover h6 {
+  transform: translateY(0px);
+}
+
+#portfolio .icons span i {
+  color: #eee;
+  font-size: 14px;
+  line-height: 28px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #111;
+  background-color: #111;
+  text-align: center;
+}
+
+#portfolio .icons span i:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+.nav-pills .nav-link {
+  color: rgb(34, 34, 34);
+  font-family: var(--second-font-family);
+  font-weight: 700;
+  position: relative;
+  background-color: transparent;
+}
+
+.nav-pills .nav-link.active {
+  color: rgb(34, 34, 34);
+  background-color: transparent;
+}
+
+.nav-pills .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #111;
+  transition: all 0.5s;
+  transform: translateX(9px);
+}
+
+.nav-pills .nav-link.active::before {
+  width: 80%;
+}
+
+/* &========= End Portfolio ========= */
+
+/* ^========= Clients ========= */
+
+#clients {
+  margin: 100px 0 50px 0;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #d6d6d6;
+  margin: 5px 7px;
+}
+
+.carousel-indicators .active {
+  background-color: #869791;
+}
+
+.carousel-indicators [data-bs-target]:hover {
+  background-color: #869791;
+}
+
+.carousel-item img {
+  width: 100px;
+}
+
+.carousel-item p {
+  color: var(--second-color);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.carousel-item h5 {
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.carousel-item h6 {
+  color: var(--second-color);
+  font-family: var(--second-font);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.carousel-item > div {
+  max-width: 82%;
+  margin: auto;
+}
+
+/* ^========= End Clients ========= */
+
+/* &========= Counter ========= */
+
+.icons-counter i {
+  font-size: 30px;
+}
+
+.counter-number h3 {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--main-color);
+}
+
+.counter-number p {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--second-color);
+}
+
+/* &========= End Counter ========= */
+
+/* ^========= Team ========= */
+
+#team .heading {
+  margin-bottom: 100px;
+}
+
+#team .card {
+  background-color: rgba(52, 52, 52, 0.8);
+  border: 0;
+}
+
+#team .card-content {
+  text-align: center;
+  padding: 20px 30px;
+  color: var(--bg-main);
+}
+
+#team .layer {
+  transform: rotateY(180deg) scale(0.5, 0.5);
+}
+
+#team .card:hover .layer {
+  transform: rotateY(0deg) scale(1, 1);
+}
+
+#team .img-container img {
+  transition: all 0.5s 0s ease;
+}
+
+#team .img-container:hover img {
+  transform: scale(1.2);
+}
+
+#team .img-container .social-icons span {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--bg-main-dark);
+  border-radius: 50%;
+  margin-inline: 5px;
+  background-color: #111;
+}
+
+#team .img-container span a {
+  color: var(--bg-main);
+  line-height: 2.5;
+}
+
+#team .img-container .social-icons span:hover {
+  background-color: var(--bg-main);
+}
+
+#team .img-container .social-icons span:hover a {
+  color: #111;
+}
+
+#team .card-content h4 {
+  font-size: 1.5625rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* ^========= End Team ========= */
+
+/* &========= Contact ========= */
+
+#contact .card {
+  border: 0;
+  padding: 30px 0;
+  align-items: center;
+}
+
+#contact .card .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  line-height: 4.5;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+}
+
+#contact .card .icon i {
+  font-size: 25px;
+}
+
+#contact .card:hover .icon {
+  color: var(--bg-main);
+  background-color: #111;
+}
+
+#contact .contact-content h6 {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+#contact .contact-content p {
+  color: var(--second-color);
+  font-size: 15px;
+}
+
+.form-control {
+  font-size: 14px;
+  border: 0;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  background-color: #f4f4f4;
+  color: var(--second-color);
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 160px;
+  min-height: 160px;
+  resize: horizontal;
+}
+
+.button .btn {
+  font-size: 13px;
+  margin-top: 20px;
+  padding: 10px 40px;
+  background-color: var(--bg-main-dark);
+  color: #eee;
+  border: 1px solid #111;
+  transition: all 0.5s;
+}
+
+.button .btn:hover {
+  background-color: var(--bg-main);
+  color: #111;
+}
+
+/* &========= End Contact ========= */
+
+/* ^========= Footer ========= */
+
+footer {
+  background-color: var(--bg-main-dark);
+  padding: 30px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--second-color);
+}
+
+/* ^========= End Footer ========= */
 
 /* &========= Media Query ========= */
 
 @media only screen and (min-width: 1170px) {
   .cd-headline {
     font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav .container {
+    padding: 0.5rem 1.25rem;
+  }
+
+  nav .navbar-brand {
+    font-size: 1.125rem;
+  }
+
+  .navbar-nav {
+    background-color: white;
+  }
+
+  .navbar-nav .nav-link {
+    color: black !important;
+  }
+
+  .nav-item a {
+    font-size: 0.8125rem;
+  }
+
+  .nav-item a::before {
+    background-color: black;
+  }
+
+  .nav-item .active::before {
+    width: 9%;
   }
 }
 
